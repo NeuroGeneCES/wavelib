@@ -3133,7 +3133,7 @@ static const double meyer[102] = {
     0.0};
 
 int filtlength(const char* name) {
-    int len = strlen(name);
+    unsigned long len = strlen(name);
     int i = 0;
     char *new_str = NULL;
     int N = 0;
@@ -3311,7 +3311,6 @@ void copy_reverse(const double *in, int N,double *out)
 
 void qmf_wrev(const double *in, int N, double *out)
 {
-    int count = 0;
     double *sigOutTemp;
     sigOutTemp = (double*)malloc(N*sizeof(double));
 

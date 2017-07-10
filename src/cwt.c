@@ -8,31 +8,6 @@ C. Torrence and G. Compo, and is available at URL: http://atoc.colorado.edu/rese
 
 #include "cwt.h"
 
-static int factorial2(int N) {
-	int factorial,i;
-
-	factorial = 1;
-
-	for (i = 1; i <= N;++i) {
-		factorial *= i;
-	}
-
-	return factorial;
-}
-
-static double factorial3(int N) {
-	int i;
-	double factorial;
-
-	factorial = 1;
-
-	for (i = 1; i <= N; ++i) {
-		factorial *= i;
-	}
-
-	return factorial;
-}
-
 double factorial(int N) {
 	if (N > 40) {
 		printf("This program is only valid for N <= 40 \n");
@@ -146,7 +121,7 @@ void cwavelet(double *y, int N, double dt, int mother, double param, double s0, 
 	double *wave, double *scale, double *period, double *coi) {
 
 	int i, j, k, iter;
-	double ymean, freq1, pi, period1, coi1;
+	double ymean, freq1, pi, period1 = 0, coi1 = 0;
 	double tmp1, tmp2;
 	double scale1;
 	double *kwave;
@@ -317,10 +292,10 @@ static int maxabs(double *array,int N) {
 
 
 double cdelta(int mother, double param, double psi0 ) {
-	int N,i,j,iter;
+	int N = 0,i,j,iter;
 	double *delta, *scale,*period,*wave,*coi,*mval;
 	double den,cdel;
-	double subscale,dt,dj,s0;
+	double subscale,dt,dj,s0 = 0;
 	int jtot;
 	int maxarr;
 

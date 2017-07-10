@@ -259,7 +259,7 @@ wpt_object wpt_init(wave_object wave, int siglength, int J) {
 cwt_object cwt_init(char* wave, double param,int siglength, double dt, int J) {
 	cwt_object obj = NULL;
 	int N, i,nj2,ibase2,mother;
-	double s0, dj;
+	double s0 = 0, dj;
 	double t1;
 	int m, odd;
 	char *pdefault = "pow";
@@ -816,7 +816,7 @@ void dwt(wt_object wt,double *inp) {
 }
 
 void wtree(wtree_object wt,double *inp) {
-	int i,J,temp_len,iter,N,lp,p2,k,N2,Np;
+	int i,J,temp_len,iter,N,lp,p2,k,N2,Np = 0;
 	int len_cA,t,t2,it1;
 	double *orig;
 
@@ -958,7 +958,7 @@ static int ipow2(int n) {
 }
 
 void dwpt(wpt_object wt, double *inp) {
-	int i, J, temp_len, iter, N, lp, p2, k, N2, Np;
+	int i, J, temp_len, iter, N, lp, p2, k, N2, Np = 0;
 	int temp, elength, temp2,size,nodes,llb,n1,j;
 	double eparam,v1,v2;
 	int len_cA, t, t2, it1,it2;
