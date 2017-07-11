@@ -3,11 +3,12 @@ Bin/
 Testing/
 
 #cmake ignore
+DartConfiguration.tcl
 CMakeCache.txt
-CMakeFiles/
-CMakeScripts/
-Makefile/
-cmake_install.cmake
+CMakeFiles
+CMakeScripts
+Makefile
+*.cmake
 install_manifest.txt
 
 #yml
