@@ -156,12 +156,12 @@ void conv_fft(const conv_object obj,fft_type *inp1,fft_type *inp2,fft_type *oup)
 	L2 = obj->ilen2;
 	ls = L1 + L2 - 1;
 	
-	a = (fft_type*) malloc (sizeof(fft_data) * N);
-	b = (fft_type*) malloc (sizeof(fft_data) * N);
+	a = (fft_type*) malloc (sizeof(fft_type) * N);
+	b = (fft_type*) malloc (sizeof(fft_type) * N);
 	c = (fft_data*) malloc (sizeof(fft_data) * N);
 	ao = (fft_data*) malloc (sizeof(fft_data) * N);
 	bo = (fft_data*) malloc (sizeof(fft_data) * N);
-	co = (fft_type*) malloc (sizeof(fft_data) * N);
+	co = (fft_type*) malloc (sizeof(fft_type) * N);
 	
 	for (i = 0; i < N;i++) {
 		if (i < L1) {
